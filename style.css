@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{background-color: ivory;}
+.wrap{position: absolute; left: 50%; top: 20%; transform: translate(-50%);}
+/* position은 레이아웃을 배치하거나 객체를 위치시킬때 사용함
+static : 기본값
+relative : 위치 계산할때 기본값의 위치에서부터 계산
+absolute : 원래 위치와 상관없이 위치 수정 가능 단 가장 가까운 상위 요소를 기준으로 위치 결정
+fixed : absolute와 같지만 상위 요소의 영향을 받지 않고 고정된 위치를 결정함 */
+h1{position: absolute; left: 50%; margin-bottom: 10%; transform: translate(-50%); color: goldenrod;}
+/* left: 50% 는 좌우 가운데 정렬, top: 50% 는 상하 가운데 정렬 <- 이것만 쓰게 되면 대상의 좌측 상단이 중앙에 감
+transform은 대상의 형태를 변경함 translate는 그 형태 위치를 조정하는 속성이다
+첫번째는 x축 두번재는 y축 / 그 형태를 -만큼 빼서 이동시키라는 의미임 */
+#id .id input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box;}
