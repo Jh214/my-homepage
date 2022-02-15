@@ -4,7 +4,7 @@
 <head>
     <title>회원가입</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sytle.css">
 </head>
 
 <body>
@@ -59,11 +59,11 @@
                 <div class="yy font">
                     <label for="yy">생년월일 </label>
                 </div>
-                <div class="yy input">
+                <span class="yy input">
                     <input id="yy" type="text" name="" value="" placeholder="년(4자)">
-                </div>
+                </span>
                 <!--placeholder는 입력 필드에 도움말을 적을 수 있는 태그-->
-                <div class="mm input">
+                <span class="mm input">
                     <select name="월력" id="mm">
                         <option value="선택">월</option>
                         <option value="1">01</option>
@@ -79,10 +79,10 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>
-                </div>
-                <div class="dd input">
+                </span>
+                <span class="dd input">
                     <input type="text" id="dd" value="" placeholder="일">
-                </div>
+                </span>
             </div>
             <div id="gender">
                 <div class="gender font">성별</div>
@@ -99,7 +99,7 @@
                 <div class="eml font">
                     <label for="email">이메일</label>
                 </div>
-                <div class="eml input">
+                <span class="eml input">
                     <input id="email" type="text" name="useremail" value=""> @
                     <select name="이메일 어드민" id="admin">
                         <!--저장된 값중 고를 수 있게 해주는 필드 생성 태그-->
@@ -111,17 +111,20 @@
                         <option value="hanmail.com">hanmail.com</option>
                         <!--select태그 안에 지정할 문구를 넣을 태그-->
                     </select>
-                </div>
+                </span>
             </div>
             <div id="phone">
-                <div class="phone font">휴대폰</div>
-                <div class="phone input1">
-                    <input id="phonenumber" type="radio" name="phone" value=""> SKT
-                    <input id="phonenumber" type="radio" name="phone" value=""> KT
-                    <input id="phonenumber" type="radio" name="phone" value=""> U+
+                <div class="font">휴대폰</div>
+                <div class="input1">
+                    <input id="phonenumber" type="radio" name="phone" value="">
+                    <label for="skt">SKT</label>
+                    <input id="phonenumber" type="radio" name="phone" value="">
+                    <label for="kt">KT</label>
+                    <input id="phonenumber" type="radio" name="phone" value="">
+                    <label for="u+">U+</label>
                     <!--같은 name값을 기입하면 하나만 선택하게끔 할 수 있음-->
                 </div>
-                <div class="country">
+                <span class="country">
                     <select name="국적" id="country" value="82">
                         <option value="233">가나 +233</option>
                         <option value="241">가봉 +241</option>
@@ -335,13 +338,13 @@
                         <option value="61">호주 +61</option>
                         <option value="852">홍콩 +852</option>
                     </select>
-                </div>
-                <div class="phone input2">
+                </span>
+                <span class="input2">
                     <input type="tell" id="pmbr" value="">
                     <span class="error_box" id="pmbrMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
-                </div>
+                </span>
             </div>
-            <div class="submit">
+            <div class="sbt">
                 <input type="submit" id="submit" value="가입하기">
             </div>
         </form>
