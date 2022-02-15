@@ -2,13 +2,21 @@
 /* CSS Document */
 
 body{background-color: ivory;}
-.wrap{position: absolute; left: 50%; top: 20%; transform: translate(-50%); min-width: 220px; margin: 0 15px; box-sizing: border-box; width: auto; max-width: 460px;}
+.wrap{overflow: hidden; position: absolute; left: 50%; top: 20%; transform: translate(-50%); min-width: 220px; margin: 0 15px; box-sizing: border-box; width: auto; max-width: 460px;}
 /* position은 레이아웃을 배치하거나 객체를 위치시킬때 사용함
 static : 기본값
 relative : 위치 계산할때 기본값의 위치에서부터 계산
 absolute : 원래 위치와 상관없이 위치 수정 가능 단 가장 가까운 상위 요소를 기준으로 위치 결정
-fixed : absolute와 같지만 상위 요소의 영향을 받지 않고 고정된 위치를 결정함 */
-h1{position: absolute; left: 50%; margin-bottom: 10%; transform: translate(-50%); color: goldenrod;}
+fixed : absolute와 같지만 상위 요소의 영향을 받지 않고 고정된 위치를 결정함 
+overflow는 요소가 너무 커서 보여주기 힘들 때 어떻게 보여줄지 정하는 속성
+visible: 기본값. 넘칠 경우 상자 밖으로 보여짐
+hideen: 넘치면 잘려서 안보이게 함
+scroll: 스크롤바가 추가되게 함
+auto: 양에 따라 스크롤바를 추가할지 자동으로 결정함*/
+select:hover{cursor: pointer;}
+/* hover: 마우스를 올렸을 때 반응하게 하는 속성 */
+.sbt:hover{cursor: pointer;}
+h1{position: absolute; left: 50%; margin-top: 5%; margin-bottom: 10%; transform: translate(-50%); color: goldenrod;}
 /* left: 50% 는 좌우 가운데 정렬, top: 50% 는 상하 가운데 정렬 <- 이것만 쓰게 되면 대상의 좌측 상단이 중앙에 감
 transform은 대상의 형태를 변경함 translate는 그 형태 위치를 조정하는 속성이다
 첫번째는 x축 두번재는 y축 / 그 형태를 -만큼 빼서 이동시키라는 의미임 */
@@ -17,16 +25,29 @@ transform은 대상의 형태를 변경함 translate는 그 형태 위치를 조
 padding은 요소의 안여백 설정
 box-sizing은 요소의 너비와 높이를 계산하는 방법 */
 
-#ps1 .ps1 input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#ps1 .ps1 input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 5px 5px 5px 5px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
 
-#ps2 .ps2 input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#ps2 .ps2 input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 5px 5px 5px 5px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
 
 #nm .nm input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
 
-#birth .yy input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#birth .yy input{display: inline; position: relative; width: 31%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
 
+#birth select{display: inline; position: relative; width: 31%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;margin-left: 10px;}
+/* select속성은 따로 지정해 줘야됨 */
+#birth .dd input{display: inline; position: relative; width: 31%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;margin-left: 10px;}
 /* display는 요소의 크기를 정하는 속성
 none은 화면에서 아예 없어지게 함(공간차지도 안함)
-block 그 라인의 너비를 전부 다 차지하게 됨
-inline
-inline-block
+block 그 라인의 너비를 전부 다 차지하게 됨 <div>, <h1>, <p>, <ul>, <ol>, <form>요소는 대표적인 block요소
+inline 해당 HTML 요소의 내용만큼만 차지하게 됨 <span>, <a>, <img>요소는 대표적인 inline 요소
+inline-block */
+#gender select{display: inline; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%}
+
+#eml .eml input{display: inline; position: relative; width: 47%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#eml select{display: inline; position: relative; width: 47%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+
+#phone .input1{border: solid 1px #e7e5c0; background-color: beige;}
+#phone .input1 label[for="skt"]{margin-right: 32%;}
+#phone .input1 label[for="kt"]{margin-right: 32%;}
+.country select{margin-top: 2%; display: inline; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#phone .input2{display: inline; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px 10px 10px 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%}
