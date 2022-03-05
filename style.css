@@ -3,6 +3,7 @@
 
 body{background-color: ivory;}
 .wrap{overflow: hidden; position: absolute; left: 50%; top: 20%; transform: translate(-50%); min-width: 220px; margin: 0 15px; box-sizing: border-box; width: auto; max-width: 460px;}
+.error_box{color: red;}
 /* position은 레이아웃을 배치하거나 객체를 위치시킬때 사용함
 static : 기본값
 relative : 위치 계산할때 기본값의 위치에서부터 계산
@@ -16,25 +17,27 @@ scroll: 스크롤바가 추가되게 함
 auto: 양에 따라 스크롤바를 추가할지 자동으로 결정함*/
 select:hover{cursor: pointer;}
 /* hover: 마우스를 올렸을 때 반응하게 하는 속성 */
+#id,#ps1,#ps2,#nm,#birth,#gender,#eml,#phone{margin-bottom: 5%;}
+
 .sbt input:hover{cursor: pointer;}
 h1{position: absolute; left: 50%; margin-top: 5%; margin-bottom: 10%; transform: translate(-50%); color: rgb(116,116,116);}
 /* left: 50% 는 좌우 가운데 정렬, top: 50% 는 상하 가운데 정렬 <- 이것만 쓰게 되면 대상의 좌측 상단이 중앙에 감
 transform은 대상의 형태를 변경함 translate는 그 형태 위치를 조정하는 속성이다
 첫번째는 x축 두번재는 y축 / 그 형태를 -만큼 빼서 이동시키라는 의미임 */
-#id .id input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#id .id input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box;}
 /* border는 요소의 테두리 설정
 padding은 요소의 안여백 설정
 box-sizing은 요소의 너비와 높이를 계산하는 방법 */
 
-#ps1 .ps1 input, #ps2 .ps2 input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 5px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#ps1 .ps1 input, #ps2 .ps2 input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 5px; background: #fff; box-sizing: border-box;}
 
-#nm .nm input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%;}
+#nm .nm input{display: block; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box;}
 
 #birth{display: block;}
 
 .birthwrap, .phonewrap, .emlwrap{display: table; width: 100%; table-layout: fixed; white-space: nowrap;}
 
-#birth .yy input, #birth select, #birth .dd input{display: table-cell; height: 51px; border: solid 1px #dadada; background: #fff; box-sizing: border-box; margin-bottom: 5%; vertical-align: middle; width: 149px;}
+#birth .yy input, #birth select, #birth .dd input{display: table-cell; height: 51px; border: solid 1px #dadada; background: #fff; box-sizing: border-box; vertical-align: middle; width: 151px;}
 /* select속성은 따로 지정해 줘야됨
 vertical-aling = 수직정렬 (오로지 inline, table-cell에서만 적용 가능함) */
 #birth select+#birth .dd input{padding-left: 10px;}
@@ -43,18 +46,18 @@ none은 화면에서 아예 없어지게 함(공간차지도 안함)
 block=그 라인의 너비를 전부 다 차지하게 됨 <div>, <h1>, <p>, <ul>, <ol>, <form>요소는 대표적인 block요소
 inline=해당 HTML 요소의 내용만큼만 차지하게 됨 <span>, <a>, <img>요소는 대표적인 inline 요소
 inline-block=inline과 같지만 너비와 높이 지정이 가능해짐 (대표적으로 input에 사용)*/
-#gender select{display: inline; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box; margin-bottom: 5%}
+#gender select{display: inline; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box;}
 
-#eml .eml input, #eml select{display: table-cell; height: 51px; border: solid 1px #dadada; background: #fff; box-sizing: border-box; margin-bottom: 5%; vertical-align: middle; width: 217px;}
+#eml .eml input, #eml select{display: table-cell; height: 51px; border: solid 1px #dadada; background: #fff; box-sizing: border-box; vertical-align: middle; width: 218.6px;}
 
 #phone .input1{border: solid 1px rgba(230, 230, 203, 0.993); background-color: beige; white-space: nowrap;}
 #phone .input1 label[for="skt"], #phone .input1 label[for="kt"]{margin-right: 31%;}
 
 #phone select{margin-top: 2%; display: inline; position: relative; width: 100%; height: 51px; border: solid 1px #dadada; padding: 10px; background: #fff; box-sizing: border-box; margin-bottom: 2%;}
 
-#phone .ftell input, #phone .stell input, #phone .ttell input{display: table-cell; height: 51px; border: solid 1px #dadada; background: #fff; box-sizing: border-box; margin-bottom: 5%; vertical-align: middle; width: 149px;}
+#phone .ftell input, #phone .stell input, #phone .ttell input{display: table-cell; height: 51px; border: solid 1px #dadada; background: #fff; box-sizing: border-box; vertical-align: middle; width: 150.9px;}
 
-.sbt input{background-color: beige; border: solid 1px rgba(230, 230, 203, 0.993); padding: 0px 15px 0px 15px; color: rgb(116, 116, 116); font-weight: bold; width: 100%; height: 50px; font-size: large; letter-spacing: 2px; margin-bottom: 5%;}
+.sbt input{background-color: beige; border: solid 1px rgba(230, 230, 203, 0.993); padding: 0px 15px 0px 15px; color: rgb(116, 116, 116); font-weight: bold; width: 100%; height: 50px; font-size: large; letter-spacing: 2px; margin: 5% 0 5% 0;}
 /* 글자간 간격은 letter-spacing, 단어간 간격은 word-spacing으로 지정할 수 있다.
 값이 커지면 간격이 커지고 음수로도 지정 가능하다 */
 
