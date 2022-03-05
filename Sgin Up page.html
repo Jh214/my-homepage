@@ -12,8 +12,9 @@
     <h1>회원가입</h1>
     <div class="wrap">
         <!--바디의 전체적인 스타일 / id선택자가 제일 우선순위고 class는 그 자식 선택자임 / id 는 한 문서에서 한 번만 사용 가능, class는 여러번 가능-->
-        <form action="#" method="post">
-            <!--사용자 입력을 받아 전송을 하기 위한 태그 / action이 반드시 필요함 -> 자기 db에 있는 자료와 비교해서 처리해줌 / 사용자가 입력한 데이터를 서버에 어떻게 전송할지 정할 태그 = method / method에는 post, get 이 있다 post는 암호화시켜서 주소창에 뜨지 않게 해주고 get은 암호화시키지 않고 주소창에 묻은채로 다음창으로 넘어감 ex) 검색창 get, 회원가입, 로그인 post-->
+        <form name="frm" action="#" method="post" onSubmit="return Empty();">
+            <!--사용자 입력을 받아 전송을 하기 위한 태그 / action이 반드시 필요함 -> 자기 db에 있는 자료와 비교해서 처리해줌 / 사용자가 입력한 데이터를 서버에 어떻게 전송할지 정할 태그 = method / method에는 post, get 이 있다 post는 암호화시켜서 주소창에 뜨지 않게 해주고 get은 암호화시키지 않고 주소창에 묻은채로 다음창으로 넘어감 ex) 검색창 get, 회원가입, 로그인 post
+            onSubmit = 사용자가 submit를 했을 때 Empty를 실행시키도록 함-->
             <div id="id">
                 <div class="id font">
                     <label for="id">아이디</label>
@@ -23,7 +24,7 @@
                     <input id="id" type="text" name="userid" value="">
                     <!--데이터를 입력할 수 있는 칸을 만들어줌 / value는 실행했을 때 미리 기입되어 있을 문구? / 인풋의 이름이 데이터베이스의 이름과 맞지 않으면 안되기때문에 name으로 지정해준다-->
                 </div>
-                <span class="error_box" id="idMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
                 <!--aria-live는 사용자로 인해 페이지의 어느 위치든 상관없이 새롭게 업데이트된 정보를 즉시 알릴 수 있는 태그 / aria-live속성을 가진 요소가 있는 경우 그 하위 항목을 포함한 부분을 라이브 영역이라고 함 / assertive는 어떤 작업을 하고있든 중단하고 사용자에게 변경 사항을 즉시 알리도록 하는 역할(긴급, 중요 업데이트에만 이 값을 사용)
                 박스 사이징으로 지정하고싶으면 div, 줄 단위로 설정하고 싶으면 span-->
             </div>
@@ -35,7 +36,7 @@
                 <div class="ps1 input">
                     <input id="pswd1" type="password" name="userpswd1" value="">
                 </div>
-                <span class="error_box" id="pswd1Msg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
                 <!--type="email"은 브라우저에서 email형식을 구분하기 위함-->
             </div>
             <div id="ps2">
@@ -45,7 +46,7 @@
                 <div class="ps2 input">
                     <input id="pswd2" type="password" name="userpswd2" value="">
                 </div>
-                <span class="error_box" id="pswd2Msg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
             </div>
             <div id="nm">
                 <div class="nm font">
@@ -54,11 +55,11 @@
                 <div class="nm input">
                     <input id="name" type="text" name="username" value="">
                 </div>
-                <span class="error_box" id="nameMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
             </div>
             <div id="birth">
                 <div class="yy font">
-                    <label for="yy">생년월일 </label>
+                    <label for="birth">생년월일 </label>
                 </div>
                 <div class="birthwrap">
                 <span class="yy input">
@@ -85,6 +86,7 @@
                 <span class="dd input">
                     <input type="text" id="dd" value="" placeholder="일">
                 </span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
             </div>
             </div>
             <div id="gender">
@@ -97,6 +99,7 @@
                         <option value="nothing">선택 안함</option>
                     </select>
                 </div>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
             </div>
             <div id="eml">
                 <div class="eml font">
@@ -115,6 +118,7 @@
                         <!--select태그 안에 지정할 문구를 넣을 태그-->
                     </select>
                 </span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
             </div>
             <div id="phone">
                 <div class="font">휴대폰</div>
@@ -354,6 +358,7 @@
                     <input type="tell" id="tell" value="">
                     <span class="error_box" id="pmbrMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
                 </span>
+                <span class="error_box" id="erMsg" aria-live="assertive" style="display:none">필수 정보입니다.</span>
             </div>
             <div class="sbt">
                 <input type="submit" id="submit" value="가입하기">
